@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout | HTML</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+        text-align: justify;
+      }
+      /* Style the header */
+      .example-box-header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+
+      /* Create two columns/boxes that floats next to each other */
+      .example-box-nav {
+        float: left;
+        width: 30%;
+        height: 300px; /* only for demonstration, should be removed */
+        background: #ccc;
+        padding: 20px;
+      }
+
+      /* Style the list inside the menu */
+      .example-box-nav-ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .example-box-article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #f1f1f1;
+        height: 300px; /* only for demonstration, should be removed */
+      }
+
+      /* Clear floats after the columns */
+      .example-box-section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Style the footer */
+      .example-box-foother {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      .source-code-layout {
+        background-color: #6fff8e;
+        padding: 10px;
+        text-align: center;
+        color: rgb(59, 59, 59);
+      }
+
+      /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+      @media (max-width: 600px) {
+        nav,
+        article {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .Conten-Container{
+        display: flex; /* Menyusun elemen secara horizontal */
+        align-items: center; /* Menyusun elemen secara vertikal agar sejajar */
+        justify-content: flex-start; /* Elemen dimulai dari kiri */
+        }
+      .image-conten {
+        width: 100%;
+        height: auto;
+        }
+      li {
+        margin-top: 2rem;
+        
+      }
+      .md-link {
+        text-align: justify;
+        margin-left: 4rem;
+        padding: 0.5rem;
+        border-radius: 20px;
+        background-color: #237580;
+      }
+      .Layout-Css-Teknick {
+        text-align: justify;
+        justify-content: center;
+        align-items: center;
+      }
+      footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 3px solid #fff; /* Garis atas footer */
+            position: relative;
+        }
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        .footer-content p {
+            font-size: 16px;
+        }
+        .footer-line {
+            border-top: 2px solid #fff; /* Garis horizontal */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            font-size: 24px;
+        }
+        .social-icons i {
+            margin: 0 10px;
+        }
+        button {
+            background-color: #4CAF50; /* Warna hijau untuk tombol */
+            color: white;  /* Teks tombol berwarna putih */
+            font-size: 16px; /* Ukuran font */
+            padding: 15px 32px; /* Padding tombol */
+            border: none; /* Tanpa border */
+            border-radius: 8px; /* Sudut melengkung */
+            cursor: pointer; /* Menampilkan cursor pointer saat hover */
+            transition: background-color 0.3s, transform 0.2s; /* Transisi halus */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Warna hijau lebih gelap saat hover */
+            transform: scale(1.1); /* Efek pembesaran tombol saat hover */
+        }
+
+        button:active {
+            background-color: #3e8e41; /* Warna hijau lebih gelap saat tombol ditekan */
+            transform: scale(1.05); /* Efek sedikit mengecil saat ditekan */
+        }
+    </style>
+    <script>
+      function downloadFiles() {
+            // Membuat link untuk file pertama
+            const link1 = document.createElement('a');
+            link1.href = '../../../learn/coding/credit/README.md';  // Ganti dengan URL file pertama Anda
+            link1.download = 'README.md';  // Nama file yang akan diunduh
+            document.body.appendChild(link1);
+            link1.click();
+            document.body.removeChild(link1);
+
+            // Membuat link untuk file kedua
+            const link2 = document.createElement('a');
+            link2.href = '../../../learn/coding/credit/LICENCE';  // Ganti dengan URL file kedua Anda
+            link2.download = 'LICENCE';  // Nama file yang akan diunduh
+            document.body.appendChild(link2);
+            link2.click();
+            document.body.removeChild(link2);
+        }
+    </script>
+  </head>
+  <body>
+    <header>
+      <center>
+        <h1>Apa itu Layout HTML?</h1>
+        <p>
+          jadi layoit html itu kayak sususan web agar terlihat rapi biar g pake
+          &lt;div&gt;terus <br />
+          lagian klo pake &lt;div&gt; terus nnti ribet atur css nya klo pake
+          layout<br />
+          ini kayak udah aman lah istilah nya
+        </p>
+      </center>
+    </header>
+    <hr />
+    <h2
+      style="display: flex; justify-content: center; width: 100%; height: auto"
+    >
+      Contoh Layout Sederhana
+    </h2>
+    <div class="example-box">
+      <header class="example-box-header">
+        <h2>Cities</h2>
+      </header>
+
+      <section class="example-box-section">
+        <nav class="example-box-nav">
+          <ul class="example-box-nav-ul">
+            <li><a href="#">London</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Tokyo</a></li>
+          </ul>
+        </nav>
+
+        <article class="example-box-article">
+          <h1>London</h1>
+          <p>
+            London is the capital city of England. It is the most populous city
+            in the United Kingdom, with a metropolitan area of over 13 million
+            inhabitants.
+          </p>
+          <p>
+            Standing on the River Thames, London has been a major settlement for
+            two millennia, its history going back to its founding by the Romans,
+            who named it Londinium.
+          </p>
+        </article>
+      </section>
+
+      <footer class="example-box-foother">
+        <p>Footer</p>
+      </footer>
+    </div>
+<hr>
+    <div class="source-code-layout">
+        <h2>Source Code example Lauyot Download In Here</h2>
+        <a href="../linkAnithink/layoutExample.rar" class="download-btn" download>Download📄</a>
+    </div>
+<hr>
+    <article style="text-align: justify;">
+      <center>
+      <div class="article-box">
+      <h2>HTML Layout Elements</h2>
+      <p>nah jadi di layout html ini juga ada element element penting nya dan itu ada gunanya masing masing</p>
+      </center>
+      </div>
+      <div class="Conten-Container">
+      <img class="image-content" src="https://www.w3schools.com/html/img_sem_elements.gif" alt="layoutExample">
+      <aside class="aside-conten">
+        <ul>
+          <li>&lt;header&gt; digunakn untuk menentukan bagian header atau bagaian awal sebuah web</li>
+          <li>&lt;nav&gt; digunakn untuk menentukan bagian navigati atau link reques sebuah web</li>
+          <li>&lt;section&gt; Untuk membagi halaman menjadi bagian tematik, sering disertai dengan heading (&lt;h1&gt;, &lt;h2&gt;, dll.)</li>
+          <li>&lt;article&gt; Untuk konten yang dapat berdiri sendiri, seperti artikel atau postingan yang dapat dipublikasikan</li> 
+          <li>&lt;aside&gt; Untuk konten tambahan yang relevan tapi tidak terlalu penting atau utama</li>
+        </ul>
+        <p>Klo Masih BElum faham dengan jekas tentang element layout Ini Bisa clikc link di bawah in aja ya</p>
+        <a class="md-link" href="https://github.com/lua99w/resourceOrLink/blob/main/newProjectW3school/markdown/layoutElementMore.md"> di sini</a>
+      </aside>
+    </article>
+  </div>
+<hr>
+    <center>
+      <article>
+        <h2>Teknik Tata Letak Html</h2>
+        <p>jadi ada beberapa teknik agar membuat tata letak multi kolom
+        </center>    
+        <ul class="Layout-Css-Teknick">
+          <li><a href="../../output/output-layoutHtmlCssFlexBox.html?file=../markdown/layout-cssFramework.md">CSS FrameWork</a></li>
+          <li><a href="../../output/output-layoutHtmlCssFloat.html?file=../markdown/layout-cssFloat.md">CSS float Properti</a></li>
+          <li><a href="../../output/output-layoutHtmlCssFlexBox.html?file=../markdown/layout-cssFlexBox.md">CSS flex Box</a></li>
+          <li><a href="../../output/output-layoutHtmlCssGrid.html?file=../markdown/layout-cssGrid.md">CSS Grid</a></li>
+      </ul>
+        </p>
+      </article>
+      <div id="content"></div>
+<hr>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Website Saya. Semua hak bebas boleh di comot aja asal kasih cr ya  🛡️</p>
+      <p>Terima kasih sudah mengunjungi kami! 😊</p>
+      <p>Jangan lupa follow kami di media sosial! 📱</p>
+    </div>
+
+    <div class="footer-line"></div> <!-- Garis pemisah -->
+
+      <p>Kontak: support@website.com 📧</p>
+      <P style="text-align: justify; text-align: center;">IF YOU WANT TO CHANGE THE SOURCE CODE PLEASE ADD CREDITS AND EVEN THOUGH THIS IS FREE PLEASE RESPECT MY HARD WORK</P>
+  </footer>
+  <div class="source-code-layout">
+    <h2>Credit Download in here</h2>
+    <button onclick="downloadFiles()">📄 Download </button>>
+</div>
+  </body>
+</html>
+
