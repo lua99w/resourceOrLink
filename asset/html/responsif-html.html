@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RESPONSIF HTML</title>
   <style>
+    p {
+      margin: 20px;
+    }
     body html {
       margin-left: 20px;
     }
@@ -176,6 +179,38 @@
         border-radius: 20px;
         margin-left: 2px;
       }
+      .codebox {
+        padding: 10px;
+        border: solid 2px #525252;
+        background-color: #baffbc;
+        font-size: 2vw;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-radius: 14px;
+      }
+      .example-code {
+        padding: 10px;
+        border: solid 2px #525252;
+        font-style: italic;
+        font-family: monospace;
+        color: #e0e0e0;
+        background-color: #131313;
+      }
+      .example-preview {
+        padding: 10px;
+        border: solid 2px #525252;
+        max-width: 80%;
+        height: 70%;
+        display: flexbox;
+        justify-content: center;
+        }
+        .example-reques {
+          padding: 4%;
+          border: solid 2px #525252;
+          text-align: center;
+          border-radius: 17px;
+          background-color: #8fffa7;
+        }
+
       
   </style>
   <script>
@@ -339,6 +374,103 @@
     </center>
      <h2>Menggunakan Properti Lebar</h2>
      Jika properti CSS <span class="CodeOrsyntax">width</span> ditetapkan ke 100%, gambar akan responsif dan diskalakan ke atas dan ke bawah:
+    <h2>Contoh</h2>
+    <center>
+<hr>
+    <img src="../../../testing/imgResponsifTes.jpg" alt="img" style="width: 100%; padding: 20px;border-radius: 10px;box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Efek drop shadow */" >
+<hr>
+  </center>
+    <div>
+    <center>
+      <h2>Code</h2>
+      <code class="codebox">&lt;img src="img_girl.jpg" style="width:100%;"&gt;</code>
+    </div>
+    <p style="text-align: justify;">Perhatikan bahwa dalam contoh di atas, gambar dapat diperbesar hingga lebih besar dari ukuran aslinya. Solusi yang lebih baik, dalam banyak kasus, adalah menggunakan max-widthproperti tersebut.</p>
+  </center>
+  </article>
+<hr>
+    <article style="margin-left: 20px;">
+      <h2>Menggunakan Properti max-width</h2>
+        <p>Jika <span class="CodeOrsyntax">max-widthp</span> roperti ditetapkan pada 100%, gambar akan diperkecil jika diperlukan, tetapi tidak akan pernah diperbesar hingga lebih besar dari ukuran aslinya:</p>
+<hr>
+        <center>
+          <img src="../../../testing/imgResponsifTes.jpg" alt="img" style="max-width: 100%;padding: 20px;border-radius: 10px;box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Efek drop shadow */"">
+
+<hr>
+      <h2>Code</h2>
+      <code class="codebox">&lt;img src="img_girl.jpg" style="max-width:100%;"&gt;</code>
+      </center>
+      </article>
+<hr>
+      <article>
+      <h2>Menampilkan Gambar Berbeda Tergantung pada Lebar Browser</h2>
+      <p>Elemen HTML <span class="CodeOrsyntax">&lt;picture&gt;</span>memungkinkan Anda menentukan gambar yang berbeda untuk ukuran jendela browser yang berbeda.
+      Ubah ukuran jendela browser untuk melihat bagaimana gambar di bawah ini berubah tergantung pada lebarnya:</p>
+    <p>Ubah ukuran jendela browser untuk melihat bagaimana gambar di bawah ini berubah tergantung pada lebarnya:</p>
+    <center>
+<hr>
+    <picture>
+      <source srcset="../../../testing/imgResponsifTes.jpg" media="(max-width: 600px)">
+      <source srcset="../../../testing/imgofViewportCdw3schoolcom.jpg" media="(max-width: 1500px)">
+      <source srcset="../../../testing/img_viewport2.png">
+      <img src="../../../testing/image.png" alt="Flowers">
+    </picture>
+  </center>
+<hr>
+    <h2>Contoh Code</h2>
+    <div class="example-code">
+      <code>      
+          &lt;picture&gt; <br>
+          &lt;source srcset="img_smallflower.jpg" media="(max-width: 600px)"&gt;<br>
+          &lt;source srcset="img_flowers.jpg" media="(max-width: 1500px)"&gt;<br>
+          &lt;source srcset="flowers.jpg"&gt;<br>
+          &lt;img src="img_smallflower.jpg" alt="Flowers"&gt;<br>
+          &lt;/picture&gt; 
+      </code>
+    </div>
+<hr>
+    </article>
+    <article>
+      <center>
+        <h2>Ukuran Teks Responsif</h2>
+        <p style="text-align: justify;">Ukuran teks dapat diatur dengan satuan "vw", yang berarti "lebar tampilan".Dengan cara itu ukuran teks akan mengikuti ukuran jendela browser:</p>
+      </center>
+<hr>
+      <p style="font-size: 10vw;">Hello World!</p>
+<hr>    
+      
+    <h2>contoh</h2>
+    <div class="example-code">
+        &lt;h1 style="font-size:10vw;"&gt;Responsive Text&lt;/h1&gt;<br>
+        &lt;p style="font-size:5vw;"&gt;Resize the browser window to see how the text size scales.&lt;/p&gt;<br>
+        &lt;p style="font-size:5vw;"&gt;Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.&lt;/p&gt;<br>
+        &lt;p&gt;Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.&lt;/p&gt;<br>
+    </div>
+    <center>
+    <h2>hasil</h2>
+    <div class="example-preview">
+      <h1 style="font-size:10vw;">Responsive Text</h1>
+        <p style="font-size:5vw;">Resize the browser window to see how the text size scales.</p>
+        <p style="font-size:5vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+        <p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
+        </center>
+    </div>
+    <p class="example-reques">Info Lengkap Bisa ke sini clik  <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_text">🔌</a></p>
+    <div class="example-foother">
+      <p>
+        <b>Catatan</b>
+        Viewport adalah ukuran jendela browser. 1vw = 1% dari lebar viewport. Jika lebar viewport 50 cm, 1vw adalah 0,5 cm.
+      </p>
+    </div>
+  </article>
+<hr>
+    <article>
+      <center>
+        <h2>Media Queries</h2>
+        <p style="text-align: justify; font-style:unset;">Selain mengubah ukuran teks dan gambar, penggunaan media query juga umum dilakukan di halaman web responsif.Dengan kueri media, Anda dapat menentukan gaya yang sepenuhnya berbeda untuk ukuran browser yang berbeda.Contoh: ubah ukuran jendela browser untuk melihat bahwa tiga elemen div di bawah ini akan ditampilkan secara horizontal pada layar besar dan ditumpuk secara vertikal pada layar kecil:</p>
+<hr>
+          <h2></h2>
+      </center>
     </article>
 </body>
 </html>
