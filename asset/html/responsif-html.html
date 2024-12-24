@@ -1,37 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive HTML Lesson</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESPONSIF HTML</title>
+  <style>
+    body html {
+      margin-left: 20px;
+    }
+    hr {
+      margin-top: 40px;
+      margin-bottom: 45px;
+    }
+    * {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+  background-color: lightblue;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 15px;
+
+    }
+    header {
+      background-color: #bbbbbb;
+      padding: 5%;
+    }
+    .about-responsif1 {
+      text-align: justify;
+      width: 100%;
+      height: auto;
+    }
+    .about-responsif2 {
+      text-align: justify;
+      width: 100%;
+      height: auto;
+    }
+    .example-responsiveweb {
+      max-width: 80%;
+      box-shadow: #bbbbbb;
+      margin: 45px;
+      border: solid 3px #525252;
+      border-radius: 1%;
+    }
+    button {
+            background-color: #4CAF50; /* Warna hijau untuk tombol */
+            color: white;  /* Teks tombol berwarna putih */
+            font-size: 16px; /* Ukuran font */
+            padding: 15px 32px; /* Padding tombol */
+            border: none; /* Tanpa border */
+            border-radius: 8px; /* Sudut melengkung */
+            cursor: pointer; /* Menampilkan cursor pointer saat hover */
+            transition: background-color 0.3s, transform 0.2s; /* Transisi halus */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Warna hijau lebih gelap saat hover */
+            transform: scale(1.1); /* Efek pembesaran tombol saat hover */
+        }
+
+        button:active {
+            background-color: #3e8e41; /* Warna hijau lebih gelap saat tombol ditekan */
+            transform: scale(1.05); /* Efek sedikit mengecil saat ditekan */
+        }
+        .downloadsource-code {
+        background-color: #8fffa7;
+        padding: 10px;
+        text-align: center;
+        color: rgb(59, 59, 59);
+        border-radius: 50px;
+
+      }
+      .article-download {
+        text-align: justify;
+        font-size: 1.5vw;
+      }
+      .article-viewport {
+        text-align: justify;
+        margin-left: 15px;
+      }
+      .example-contoh {
+        margin-left: 20px;
+        color: aliceblue;
+      }
+      .example-contoh code {
+        font-size: 2vw;
+        text-align: justify;
+        border: solid 1px #303030;
+        padding: 20px;
+        background-color: #303030;
+        
+      }
+      .article-baout-viewwport {
+        margin-top: 35px;
+        margin-left: 20px;
+      }
+      .article-baout-viewwport {
+        text-decoration: solid;
+      }
+      .article-baout-viewwport1 {
+        margin-left: 20px;
+      }
+      .sectionImage1 {
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Efek drop shadow */
+        }
+      .sectionImage2 {
+        padding: 20px;
+      border-radius: 10px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); 
+      }
+      .iamgeexampleunViewport1, .iamgeexamplewidtViewpor2 {
+      flex: 1; /* Membuat setiap div memiliki lebar yang sama dan fleksibel */
+      }
+
+      .sectionImage1, .sectionImage2 {
+      width: 100%; /* Membuat gambar menyesuaikan lebar div */
+      height: auto; /* Menjaga rasio gambar */
+      }
+      .sectionbaoutReqToMd {
+        display: flex; /* Menjadikan container menggunakan Flexbox */
+        justify-content: space-between; /* Menyebarkan gambar secara merata dengan ruang antara mereka */
+        gap: 20px; /* Jarak antar gambar (opsional, bisa diatur sesuai kebutuhan) */
+        }
+      .example-foother{
+        padding-top:45px;
+        padding-bottom:45px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #baffbc;
+        border-radius: 20px;
+      }
+      .CodeOrsyntax {
+        color: #ff3232;
+        padding: 3px;
+        background-color: #1f1f1f;
+        border-radius: 20px;
+        margin-left: 2px;
+      }
+      
+  </style>
+  <script>
+    function downloadFiles() {
+            // Membuat link untuk file pertama
+            const link1 = document.createElement('a');
+            link1.href = '../linkAnithink/index.html';  // Ganti dengan URL file pertama Anda
+            link1.download = 'source-code.html';  // Nama file yang akan diunduh
+            document.body.appendChild(link1);
+            link1.click();
+            document.body.removeChild(link1);
+
+            // Membuat link untuk file kedua
+            const link2 = document.createElement('a');
+            link2.href = '../linkAnithink/style.css';  // Ganti dengan URL file kedua Anda
+            link2.download = 'source-code.css';  // Nama file yang akan diunduh
+            document.body.appendChild(link2);
+            link2.click();
+            document.body.removeChild(link2);
+        }
+  </script>
 </head>
 <body>
-    
-<header>
-    <h1>Responsive HTML Lesson</h1>
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#principles">Principles</a>
-        <a href="#examples">Examples</a>
-    </nav>
-</header>
-<main>
-    <section id="introduction">
-        <h2>Introduction</h2>
-        <p>This lesson covers the basics of responsive web design.</p>
+  <header>
+    <center>
+      <h1>
+        Desain Web Responsif HTML
+      </h1>
+    </center>
+  </header>
+<hr>
+  <section class="about-responsif1">
+      <p>
+        Desain web responsif adalah tentang membuat halaman web yang terlihat bagus di semua perangkat!
+      </p>
+      <p>
+        Desain web responsif akan secara otomatis menyesuaikan dengan berbagai ukuran layar dan area pandang.
+      </p>
+  </section>
+<hr>
+  <section class="about-responsif2">
+    <h2>Apa itu Desain Web Responsif?</h2>
+    <p>Desain Web Responsif adalah tentang penggunaan HTML dan CSS untuk secara otomatis mengubah ukuran, menyembunyikan, mengecilkan, atau memperbesar situs web, agar terlihat bagus di semua perangkat (desktop, tablet, dan ponsel):</p>
+  </section>
+<hr>
+  <article>
+    <h1>Contoh Desain Web Responsif</h1>
+    <h2>DI BAWHA INI ADALAH CONTOH DESAIN WEB RESPONSIF</h2>
+
+    <div class="example-responsiveweb">
+    <body style="font-family:Verdana;">
+
+      <div style="background-color:#f1f1f1;padding:15px;">
+        <h1>Cinque Terre</h1>
+        <h3>Resize the browser window</h3>
+      </div>
+      
+      <div style="overflow:auto">
+        <div class="menu">
+          <div class="menuitem">The Walk</div>
+          <div class="menuitem">Transport</div>
+          <div class="menuitem">History</div>
+          <div class="menuitem">Gallery</div>
+        </div>
+      
+        <div class="main">
+          <h2>The Walk</h2>
+          <p>The walk from Monterosso to Riomaggiore will take you approximately two hours, give or take an hour depending on the weather conditions and your physical shape.</p>
+          <img src="../../../testing/responsife-example.png" style="width:100%">
+        </div>
+      
+        <div class="right">
+          <h2>What?</h2>
+          <p>Cinque Terre comprises five villages: Monterosso, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
+          <h2>Where?</h2>
+          <p>On the northwest cost of the Italian Riviera, north of the city La Spezia.</p>
+          <h2>Price?</h2>
+          <p>The Walk is free!</p>
+        </div>
+      </div>
+    </div>
+    <div style="background-color:#f1f1f1;text-align:center;padding:10px;margin-top:7px;font-size:12px;"> This web page is a part of a demonstration of fluid web design made by w3schools.com. Resize the browser window to see the content respond to the resizing.</div>
+  </article>
+<hr style="margin-top: 20px;">
+  <article class="article-download">
+    <center>
+    <h2>Jadi Itu Adalah contoh desian Responsif </h2>
+    <p>untuk source code anda bisa mendapat kan nya di website <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_page">www.w3school.com</a></p>
+    <p>atau anda juga bisa mendownoad dari sini dengan mengeclik icon 📄 di bawah ini</p>
+  </center>
+    <div class="downloadsource-code" style="margin-top: 20px; margin-bottom: 20px;">
+      <button onclick="downloadFiles()">📄 Download </button>
+    </div>
+  </article>
+<hr>
+    <view>
+      <div class="article-viewport">
+    <center>
+        <h2>
+          Mengatur Viewport
+        </h2>
+        <p>Untuk membuat situs web responsif, tambahkan tag berikut &lt;meta&gt; ke semua halaman web Anda:</p>
+      </div>
+        <hr>
+        <div class="example-contoh">
+        <h2 style="color: #525252;">Contoh</h2>
+        <code>
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0&gt;
+        </code>
+      </div>
+       </center>
+    </article>
+
+
+<hr style="margin-top: 50px;">
+    <article>
+    <p class="article-baout-viewwport"> Ini akan mengatur viewport halaman Anda, yang akan memberikan instruksi kepada browser tentang cara mengendalikan dimensi dan skala halaman.</p>
+      <p class="article-baout-viewwport1">Berikut adalah contoh halaman web tanpa tag meta viewport, dan halaman web yang sama dengan tag meta viewport:</p>
+    </article>
+
+<hr>
+   
+    <article>
+      <center>
+      <div class="article-viewport">
+        <h2>disini sya akan memberikan contoh tanpa viewport dan dnegan viewport</h2>
+      </center>
+      </div>
+    </article>
+
+<hr>
+
+    <section  class="sectionbaoutReqToMd" style="margin-top: 20px; text-align: center;">
+      <div class="iamgeexampleunViewport1">
+        <h2>Tanpa Viewport</h2>
+        <a href="../../output/alinkwitViewport.html">
+        <img src="../../../testing/img_viewport1.png" class="sectionImage1" alt="example-no-viewport" style="max-width: 80%;">
+      </a>
+      
+      </div>
+      <div class="iamgeexamplewidtViewpor2">
+        <h2>Dengan ViewPort</h2>
+        <a href="../../output/alinkwitoutViewport.html">
+        <img src="../../../testing/img_viewport2.png" class="sectionImage2" alt="example-witd-viewport" style="max-width: 80%;">
+        </a>
+      </div>
     </section>
-    <section id="principles">
-        <h2>Principles of Responsive Design</h2>
-        <p>Responsive design ensures that web pages look good on all devices.</p>
-    </section>
-    <section id="examples">
-        <h2>Examples</h2>
-        <p>Here are some examples of responsive layouts.</p>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2023 Responsive Design Lesson</p>
-</footer>
+
+<hr>
+
+    <div class="example-foother">
+      <p>
+        <b>Catatan</b>:Jika Anda menelusuri halaman ini di ponsel atau tablet, Anda dapat mengeklik dua tautan di atas untuk melihat perbedaannya.
+      </p>
+    </div>
+<hr>
+    <article>
+    <center>
+        <h2>Gambar Responsif</h2>
+        <p>Gambar responsif adalah gambar yang skalanya dapat disesuaikan dengan ukuran browser apa pun.</p>
+    </center>
+     <h2>Menggunakan Properti Lebar</h2>
+     Jika properti CSS <span class="CodeOrsyntax">width</span> ditetapkan ke 100%, gambar akan responsif dan diskalakan ke atas dan ke bawah:
+    </article>
 </body>
 </html>
